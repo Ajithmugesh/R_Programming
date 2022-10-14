@@ -1,0 +1,127 @@
+install.packages(rpart.plot)
+library(rpart)
+library(rpart.plot)
+data=read.csv("E:\\Gender.csv")
+
+tree<-rpart(Gender~Height+Weight,data)
+a<-data.frame(Height=c(130),Weight=c(77))
+result<-predict(tree,a)
+print(result)
+rpart.plot(tree)
+
+----------------------Gender.csv-------------------
+
+
+Gender	Height	Weight
+Male	150	56
+Female	160	58
+Male	140	40
+Female	165	53
+Male	173	59
+Female	180	68
+Male	130	50
+Female	180	61
+Male	160	53
+Female	170	40
+Male	150	56
+Female	140	39
+Male	151	52
+Female	166	54
+Male	170	52
+Female	180	49
+Male	150	56
+Female	163	56
+Male	153	40
+Female	148	59
+Male	158	52
+Female	163	53
+Male	149	39
+Female	170	58
+Male	130	40
+Female	190	70
+Male	140	40
+Female	156	69
+Male	167	59
+Female	160	64
+Male	170	76
+Male	150	56
+Female	153	58
+Male	130	30
+Female	157	53
+Male	163	59
+Female	163	58
+Male	140	38
+Female	176	60
+Male	150	43
+Female	146	40
+Male	150	56
+Female	132	34
+Male	161	62
+Female	157	54
+Male	170	72
+Female	159	49
+Male	160	66
+Female	172	66
+Male	157	56
+Female	149	50
+Male	168	67
+Female	163	61
+Male	149	47
+Female	158	58
+Male	140	43
+Female	170	73
+Male	150	49
+Female	156	59
+Male	167	63
+Female	167	64
+Male	194	96
+Female	150	40
+Female	163	61
+Male	149	40
+Female	150	58
+Male	159	50
+Female	130	30
+Male	150	50
+Female	166	63
+Male	157	54
+Female	160	64
+Male	180	76
+Male	170	76
+Female	163	58
+Male	140	46
+Female	157	53
+Male	173	79
+Female	163	68
+Male	130	35
+Female	166	61
+Male	160	53
+Female	146	40
+Male	150	56
+Female	133	39
+Male	151	42
+Female	154	54
+Male	160	62
+Female	159	49
+Male	150	46
+Female	156	56
+Male	143	46
+Female	151	49
+Male	151	47
+Female	153	51
+Male	149	47
+Female	158	58
+Male	130	38
+Female	170	70
+Male	150	49
+Female	159	59
+Male	157	43
+Female	160	54
+Male	170	66
+Female	145	40
+
+
+
+
+
+
+

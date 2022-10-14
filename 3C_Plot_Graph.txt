@@ -1,0 +1,17 @@
+x<-c(7,15,23,12,44,56,32)
+barplot(x,xlab = "Student",
+        ylab="Mark",col="White",
+        col.axis="darkgreen",
+        col.lab="darkgreen")
+y<-c(210,450,250,100,50,90)
+names(y)<-c("HTML","DS","Java","C","C++","Python")
+pie(y,labels = names(y),
+        col="White",
+        col.axis="darkgreen",
+        col.lab="darkgreen")
+z<-Orange[,c('age','circumference')]
+plot(x=z$age,y=z$circumference,xlab="Age",
+     ylab="Circumference",main="Age VS circuference",
+    col.axis="darkgreen",
+    col.lab="darkgreen",col.main="Blue")
+warnings()

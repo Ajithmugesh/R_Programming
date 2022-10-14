@@ -1,0 +1,78 @@
+# 1. Logical Data Type
+bool1 <- TRUE
+print(bool1)
+print(class(bool1))
+
+bool2 <- FALSE
+print(bool2)
+print(class(bool2))
+# 2. Numeric Data Type
+    # floating point values
+weight <- 63.5
+print(weight)
+print(class(weight))
+
+    #  real numbers
+height <- 182
+print(height)
+print(class(height))
+    #Integer
+integer_variable <- 186L
+print(integer_variable)
+print(class(integer_variable))
+
+# 3. Complex Data Type
+           # 2i represents imaginary part
+complex_value <- 3 + 2i
+print(complex_value)
+           # print class of complex_value
+print(class(complex_value))
+
+#5. Character Data Type
+
+  # create a character variable
+my_char <- 'Apple'
+print(my_char)
+print(class(my_char))
+
+#6. Raw Data Type
+      #  convert character to raw
+raw_variable <- charToRaw("Welcome to Programiz")
+
+print(raw_variable)
+print(class(raw_variable))
+
+      # convert raw to character
+char_variable <- rawToChar(raw_variable)
+
+print(char_variable)
+print(class(char_variable))
+
+
+#Data Structures
+ #Vectors
+n <- c(1,2,5.3,6,-2,4) 
+l <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) 
+s = c("USA", "UK", "AFRICA", "INDIA", "CHINA") 
+print(l)
+print(class(n))
+print(class(l))
+print(class(s))
+
+
+#Matrices
+m = matrix(c(20, 45, 33, 19, 52, 37), nrow=2, ncol=3, byrow = TRUE)    
+print(m)
+#Lists
+name = c("abhi", "ansh", "ajay") 
+place = c("delhi", "mumbai", "pune") 
+age = c(TRUE, FALSE, TRUE, FALSE, FALSE) 
+
+l = list(name, place, age)   
+print(l)
+
+#Data Frame
+df <- data.frame(rollnum = seq(1:10), h1 = 15:24, h2 = 81:90)
+
+print(df)
+plot(1,5)

@@ -1,0 +1,23 @@
+########################Import###########################
+setwd("F:/")
+getwd()
+myData=read.csv("barath.csv",stringsAsFactors = F)
+print(head(myData))
+mean1 = mean(myData$mark1)
+print(paste("Mean:",mean1))
+median1 = median(myData$Age)
+print(paste("Median:",median1))
+
+########################Export###########################
+install.packages("openxlsx")
+library(openxlsx)
+s.no <- c(1,2, by=1)
+fruits <- c("apple","mango","Orange")
+Shop1 <- c(12,14,16)
+Shop2 <- c(12,14,16)
+Shop3 <- c(12,14,16)
+Shop4 <- c(66,14,16)
+rate <- data.frame(fruits,Shop1,Shop2,Shop3,Shop4)
+print(rate)
+write.xlsx(rate,file="F:/Book1.xlsx")
+

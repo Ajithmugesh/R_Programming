@@ -1,0 +1,69 @@
+#To check whether the number is positive or not 
+z<-as.integer(readline(prompt="Enter any number:"))
+if(z>=0){
+  print(paste(z,"is a Positive number"))
+}else
+{
+  print(paste(z,"is a Negative number"))
+}
+
+
+#Odd Or Even:
+
+#{
+num<-as.integer(readline(prompt="Enter any number:"))
+
+if(num %% 2 == 0){
+  print(paste(num,"is Even Number"))
+}else{
+  print(paste(num,"is Odd Number"))
+}
+#}
+
+#Fibonacci Series:
+
+num1 <-readline(prompt="Enter a range:")
+Fibo<-numeric(num1)
+Fibo[1] <- Fibo[2] <- 1
+for (i in 3:num1) Fibo[i] <- Fibo[i - 2] + Fibo[i - 1]
+print(paste("Fibonacci numbers upto",num1,"is:"))
+print(Fibo)
+
+#Prime Numbers
+
+num     = as.integer(readline(prompt = "Enter a number: "))
+#num  = 15
+isPrime = 0
+if (num > 1) {
+  isPrime = 1
+  for (i in 2: (num - 1)) {
+    if ((num %% i) == 0) {
+      isPrime = 0
+      break
+    }
+  }
+}
+if (num == 2) isPrime = 1
+if (isPrime == 1) {
+  print(paste(num, "is a prime number"))
+} else {
+  print(paste(num, "is not a prime number"))
+}
+
+#Armstrong Number
+num = as.integer(readline(prompt="Enter a number: "))
+# initialize sum
+sum = 0
+# find the sum of the cube of each digit
+temp = num
+while(temp > 0) {
+  digit = temp %% 10
+  sum = sum + (digit ^ 3)
+  temp = floor(temp / 10)
+}
+# display the result
+if(num == sum) {
+  print(paste(num, "is an Armstrong number"))
+} else {
+  print(paste(num, "is not an Armstrong number"))
+}

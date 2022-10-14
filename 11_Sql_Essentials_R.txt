@@ -1,0 +1,93 @@
+install.packages("Sqldf")
+install.packages("readr")
+library(Sqldf)
+library(readr)
+sales_by_week <- read_csv("G:/Rpro/r/EmpSalary.csv")
+View(EmpSalary)
+sqldf("SELECT
+Department,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY Department
+")
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY Department, Category")
+sqldf("SELECT
+Department,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY Department
+HAVING SUM(salary) = 16000")
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY Department, Category
+HAVING SUM(salary) = 8000")
+
+sqldf("SELECT
+Department,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY CUBE(Department)")
+
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY CUBE(Department, Category)")
+
+sqldf("SELECT
+Department,
+      SUM(Salary) as Salary
+      FROM EmpSalary
+      GROUP BY ROLLUP(Department)")
+
+sqldf("SELECT
+Department,
+      Category,
+      SUM(Salary) as Salary
+      FROM EmpSalary
+      GROUP BY ROLLUP(Department, Category)")
+
+
+sqldf("SELECT
+Department,
+SUM(Salary) as salary
+FROM EmpSalary
+GROUP BY ROLLUP(Department)")
+
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as salary
+FROM EmpSalary
+GROUP BY ROLLUP (Category, Department)")
+
+sqldf("SELECT
+Department,
+      Category,
+      SUM(Salary) as Salary,
+      GROUPING_ID(Category, Department) as GroupingID
+      FROM EmpSalary
+      GROUP BY ROLLUP(Category, Department)")
+
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY GROUPING SETS(Category, Department,(Category, Department),())")
+
+sqldf("SELECT
+Department,
+Category,
+SUM(Salary) as Salary
+FROM EmpSalary
+GROUP BY GROUPING SETS(CUBE(Department, Category), ROLLUP(Department, Category))")

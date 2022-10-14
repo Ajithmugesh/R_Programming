@@ -1,0 +1,16 @@
+tf <- function(row){
+  return (row/sum(row))
+}
+idf <- function(col){
+  return (log10(length(col)/length(which(col>0))))
+}
+tfidf <- function(token.matrix){
+  tf <- t(apply(token.matrix,1,tf))
+  idf <- apply(token.matrix,2,idf)
+  return (tf*idf)
+}
+library (tm)
+text <- c("A dog and a cat","The Dog is barking","The Cat is on the wall")
+corp <- Corpus (VectorSource(text))
+doc.tokens <- as.matrix(DocumentTermMatrix(corp))
+tfidf(doc.tokens)

@@ -1,0 +1,57 @@
+create table employees1(id int,name varchar(30),salary int, age int, location varchar(30),mobile int);
+
+insert into employees1 values(101,'Abdullah',50000,22,'Tirunelveli',9876543210);
+
+insert into employees1 values(102,'Agnel',40000,25,'Madurai',8754321069);
+
+insert into employees1 values(103,'Ahamed',30000,29,'Tenkasi',7954321086);
+
+insert into employees1 values(104,'Apshal',20000,23,'Tuticorin',6973514208);
+
+insert into employees1 values(105,'Arun',55000,23,'Kanyakumari',9065213874);
+
+insert into employees1 values(106,'Ashwin',45000,25,'Chennai',8631450672);
+
+select * from employees1;
+
+select count(age) from employees1;
+
+select AVG(salary) from employees1;
+
+select SUM(salary) from employees1;
+
+select salary from employees1 where id=104;
+
+select min(salary) from employees1;
+
+select max(salary) from employees1;
+
+create table students11(id int,name varchar(20),subject_name varchar(20),Marks_scored int,Total_marks int);
+
+insert into students11 values(1,'Joseph','DIP',99,100);
+
+insert into students11 values(2,'Ravi','IOT',90,100);
+
+insert into students11 values(3,'Jack','DS',87,100);
+
+insert into students11 values(4,'Steve','SC',85,100);
+
+insert into students11 values(5,'Karthi','Python',95,100);
+
+insert into students11 values(6,'Devi','JAVA',80,100);
+
+select * from students11;  
+
+select Marks_scored,id,name,rank() over(order by Marks_scored desc),dense_rank() over(order by Marks_scored desc),row_number() over(order by Marks_scored desc)from students11;
+
+with cte as(select AVG(Marks_scored) as average_marks from students11)
+
+select students11.*,cte.average_marks from students11,cte
+
+with cte as(select MIN(Marks_scored) as Min_marks from students11)
+
+select students11.*,cte.Min_marks from students11,cte
+
+with cte as(select MAX(Marks_scored) as Max_marks from students11)
+
+select students11.*,cte.Max_marks from students11,cte
